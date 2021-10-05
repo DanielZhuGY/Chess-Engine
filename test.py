@@ -19,8 +19,18 @@ def move():
         board.push(move)
         print(board)
     return(i)
-move()
-if i%2 !=0:
-    print('black win')
-else:
-    print('white win')
+
+
+def main():
+    n = 1
+    while n:
+        turn = move()
+        if turn%2 !=0:
+            print('black win')
+        else:
+            print('white win')
+        n = 0
+        new = input('type 1 if you want to start a new game')
+        if new == 1:
+            n = 1
+main()
