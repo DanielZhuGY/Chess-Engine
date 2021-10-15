@@ -7,12 +7,10 @@ game = {}
 #A dictionary includes all the games
 #something wrong with this while loop
 while dummy:
-    if chess.pgn.read_game(pgn) == None:
-        print(chess.pgn.read_game(pgn))
-        dummy = 0 
-    else:
-        game[count] = chess.pgn.read_game(pgn)
-        count = count+1
+    game[count] = chess.pgn.read_game(pgn)
+    count = count+1
+    if game[count-1] is None:
+        dummy = 0
 
 #check the winner 
 
@@ -25,9 +23,9 @@ for i in range(count-1):
         log_board.append(board)
         move_counter = move_counter+1
     if move_counter%2!=0:
-        winner = 'b'
-    else:
         winner = 'w'
+    else:
+        winner = 'b'
     for n in range(move_counter):
         print(log_board[n])
         print(winner)
