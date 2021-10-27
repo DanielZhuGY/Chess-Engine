@@ -297,13 +297,12 @@ def evaluate(board, depth): # Returns advantage of a particular player(scaled by
 #                               PGN reader return board＆value
 # -------------------------------------------------------------------------------------------------
 
-pgn = open(r"C:\Users\70545\Desktop\purdue\CS\chess\Morphy.pgn")#change this,My computer cannot use relative path
+pgn = open(r"C:\Users\70545\Desktop\purdue\CS\chess\Morphy.pgn")#please change this while using,My computer cannot use relative path
 dummy = 1
 count = 0
 game = {}
 #get the number of games in PGN file
 #A dictionary includes all the games
-#something wrong with this while loop
 while dummy:
     game[count] = chess.pgn.read_game(pgn)
     count = count+1
